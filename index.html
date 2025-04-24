@@ -50,6 +50,19 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
+        /* Add to existing styles */
+        .hidden {
+            display: none;
+        }
+        
+        .project-card {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .project-card.hidden {
+            opacity: 0;
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
@@ -111,8 +124,8 @@
                                     <i class="fas fa-map-marked-alt text-blue-600 text-xl"></i>
                                 </div>
                                 <div>
-                                    <p class="text-sm text-gray-500">Geospatial Analytics & Data Visualization Specialist at Rice University, Houston TX</p>
-                                    <p class="font-medium">Geospatial Analytics Specialist</p>
+                                    <p class="text-sm text-gray-800">Geospatial Analytics & Data Visualization Specialist</p>
+                                    <p class="text-sm text-gray-500">Rice University</p>
                                 </div>
                             </div>
                         </div>
@@ -375,7 +388,7 @@
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
                 <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
                     <div class="h-48 bg-blue-100 flex items-center justify-center">
@@ -489,13 +502,80 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Add more project cards with 'hidden' class -->
+                <div class="project-card hidden bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-project-diagram text-blue-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+                        <p class="text-gray-600 mb-4">Brief description of the project.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-link mr-2"></i>
+                            <a href="#" target="_blank" class="text-blue-600 hover:underline">projectlink.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card hidden bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-project-diagram text-blue-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+                        <p class="text-gray-600 mb-4">Brief description of the project.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-link mr-2"></i>
+                            <a href="#" target="_blank" class="text-blue-600 hover:underline">projectlink.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card hidden bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-project-diagram text-blue-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+                        <p class="text-gray-600 mb-4">Brief description of the project.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-link mr-2"></i>
+                            <a href="#" target="_blank" class="text-blue-600 hover:underline">projectlink.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card hidden bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-project-diagram text-blue-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+                        <p class="text-gray-600 mb-4">Brief description of the project.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-link mr-2"></i>
+                            <a href="#" target="_blank" class="text-blue-600 hover:underline">projectlink.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card hidden bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-project-diagram text-blue-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+                        <p class="text-gray-600 mb-4">Brief description of the project.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-link mr-2"></i>
+                            <a href="#" target="_blank" class="text-blue-600 hover:underline">projectlink.com</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div class="text-center mt-16">
-                <a href="#" class="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition">
+                <button id="view-all-projects" class="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition">
                     <i class="fas fa-folder-open mr-2"></i>
-                    View All Projects
-                </a>
+                    <span class="button-text">View All Projects</span>
+                </button>
             </div>
         </div>
     </section>
@@ -716,6 +796,41 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
+                }
+            });
+        });
+
+        // Projects visibility toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectsGrid = document.getElementById('projects-grid');
+            const viewAllButton = document.getElementById('view-all-projects');
+            const buttonText = viewAllButton.querySelector('.button-text');
+            const projectCards = projectsGrid.querySelectorAll('.project-card');
+
+            // Initially hide projects beyond the first 6
+            projectCards.forEach((card, index) => {
+                if (index >= 6) {
+                    card.classList.add('hidden');
+                }
+            });
+
+            viewAllButton.addEventListener('click', function() {
+                const hiddenProjects = projectsGrid.querySelectorAll('.project-card.hidden');
+                
+                if (hiddenProjects.length > 0) {
+                    // Show all projects
+                    hiddenProjects.forEach(project => {
+                        project.classList.remove('hidden');
+                    });
+                    buttonText.textContent = 'Show Less';
+                } else {
+                    // Hide projects beyond the first 6
+                    projectCards.forEach((card, index) => {
+                        if (index >= 6) {
+                            card.classList.add('hidden');
+                        }
+                    });
+                    buttonText.textContent = 'View All Projects';
                 }
             });
         });
