@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uilvim E. G. Franco | GIS & Environmental Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 100%);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 1.25rem;
+            top: 2.5rem;
+            height: calc(100% - 2.5rem);
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+        .map-marker {
+            position: relative;
+        }
+        .map-marker::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            left: -28px;
+            top: 4px;
+        }
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        .skill-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .publication-card {
+            transition: all 0.3s ease;
+        }
+        .publication-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-blue-600">Uilvim E. G. Franco</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                    <a href="#publications" class="text-gray-700 hover:text-blue-600 transition">Publications</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-4 shadow-md">
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600 transition">About</a>
+            <a href="#experience" class="block py-2 text-gray-700 hover:text-blue-600 transition">Experience</a>
+            <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600 transition">Projects</a>
+            <a href="#publications" class="block py-2 text-gray-700 hover:text-blue-600 transition">Publications</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Uilvim E. G Franco</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-blue-200">GIS Specialist & Environmental Engineer</h2>
+                    <p class="text-lg mb-8 max-w-lg">Seasoned professional specializing in geographic information systems, environmental engineering, and project management with extensive experience in academic projects and web-based map applications.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition">Get in Touch</a>
+                        <a href="#projects" class="border border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition">View Projects</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-blue-400 rounded-full overflow-hidden shadow-xl">
+                            <!-- Placeholder for profile image -->
+                            <div class="w-full h-full bg-blue-300 flex items-center justify-center">
+                                <i class="fas fa-user text-white text-8xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-white rounded-lg shadow-lg p-4">
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 p-3 rounded-full mr-3">
+                                    <i class="fas fa-map-marked-alt text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Geospatial Analytics & Data Visualization Specialist at Rice University, Houston TX</p>
+                                    <p class="font-medium">Geospatial Analytics Specialist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Professional Summary</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        GIS Specialist and Environmental Engineer with extensive experience in academic projects and web-based map applications. Skilled in acquiring, managing, manipulating, and analyzing large datasets for educational institutions and non-profit organizations.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Detail-oriented with a solid background in geographic mapping and data compilation technology. Proficient in database management and analysis, with strong skills in various computer systems, from spreadsheets and databases to GIS mapping software.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Adept at creating maps, tables, charts, graphic reports, presentations, and web content, including web maps and dashboards. Versatile and organized project manager with a proven track record of successful project leadership.
+                    </p>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4">Highlights</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-globe text-blue-600 mt-1 mr-3"></i>
+                                <span>Co-developed a GIS-based COVID-19 response platform adopted by Brazil's Science and Technology Ministry and São Paulo state government</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-mountain text-blue-600 mt-1 mr-3"></i>
+                                <span>Co-designed and deployed a dynamic platform to visualize data about recently disappeared and soon-to-disappear glaciers, featured at UNESCO 1st World Day for Glaciers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-virus text-blue-600 mt-1 mr-3"></i>
+                                <span>Co-designed an online dashboard that tracks and predicts SARS-CoV-2 viral loads based on wastewater sampling in Houston</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-archway text-blue-600 mt-1 mr-3"></i>
+                                <span>ImagineRio project presented at the 17th International Architecture Exhibition of La Biennale di Venezia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-hands-helping text-blue-600 mt-1 mr-3"></i>
+                                <span>Co-architected a GIS application used by the Lebanese army and NGOs for Beirut's recovery post-2020 explosion</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <h3 class="text-2xl font-semibold mb-6">Core Competencies</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="skill-badge bg-blue-50 px-4 py-3 rounded-lg">
+                                <i class="fas fa-tasks text-blue-600 mr-2"></i>
+                                <span>Planning and Organizing</span>
+                            </div>
+                            <div class="skill-badge bg-blue-50 px-4 py-3 rounded-lg">
+                                <i class="fas fa-users text-blue-600 mr-2"></i>
+                                <span>Interpersonal Effectiveness</span>
+                            </div>
+                            <div class="skill-badge bg-blue-50 px-4 py-3 rounded-lg">
+                                <i class="fas fa-comments text-blue-600 mr-2"></i>
+                                <span>Communication</span>
+                            </div>
+                            <div class="skill-badge bg-blue-50 px-4 py-3 rounded-lg">
+                                <i class="fas fa-brain text-blue-600 mr-2"></i>
+                                <span>Judgment/Decision-Making</span>
+                            </div>
+                            <div class="skill-badge bg-blue-50 px-4 py-3 rounded-lg">
+                                <i class="fas fa-search text-blue-600 mr-2"></i>
+                                <span>Researching and Investigating</span>
+                            </div>
+                            <div class="skill-badge bg-blue-50 px-4 py-3 rounded-lg">
+                                <i class="fas fa-people-group text-blue-600 mr-2"></i>
+                                <span>Collaboration with Teams</span>
+                            </div>
+                            <div class="skill-badge bg-blue-50 px-4 py-3 rounded-lg">
+                                <i class="fas fa-lightbulb text-blue-600 mr-2"></i>
+                                <span>Problem Analysis</span>
+                            </div>
+                            <div class="skill-badge bg-blue-50 px-4 py-3 rounded-lg">
+                                <i class="fas fa-chart-line text-blue-600 mr-2"></i>
+                                <span>Data Management</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="text-xl font-semibold mb-4">Technical Proficiencies</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-medium flex items-center">
+                                        <i class="fas fa-cloud text-blue-600 mr-2"></i>
+                                        Cloud Services
+                                    </h4>
+                                    <p class="text-sm text-gray-600 mt-1">Amazon Web Services (AWS): EC2, S3, CloudFront, DynamoDB, RDS, Load Balancer, Google Cloud Services, BigQuery, Cloud Storage</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium flex items-center">
+                                        <i class="fas fa-map text-blue-600 mr-2"></i>
+                                        GIS Platforms
+                                    </h4>
+                                    <p class="text-sm text-gray-600 mt-1">ArcGIS Enterprise, ArcGIS Online, QGIS, ArcGIS Web AppBuilder, ArcGIS Experience Builder, ArcGIS StoryMaps, ArcGIS Dashboard</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium flex items-center">
+                                        <i class="fas fa-code text-blue-600 mr-2"></i>
+                                        Programming
+                                    </h4>
+                                    <p class="text-sm text-gray-600 mt-1">ArcPy, ArcGIS API, Arcade, HTML, CSS, JavaScript, Python, Flask, SQL</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium flex items-center">
+                                        <i class="fas fa-database text-blue-600 mr-2"></i>
+                                        Databases
+                                    </h4>
+                                    <p class="text-sm text-gray-600 mt-1">SQL Server, PostgreSQL, PostGIS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-8 relative">
+                    <!-- Rice University - Current -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold">Rice University, Houston, TX</h3>
+                                <span class="text-blue-600 font-medium mt-1 sm:mt-0">Jan 2025 - Present</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-gray-800 mb-3">Geospatial Analytics & Data Visualization Specialist</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                                <li>Engage with faculty and students to support learning, teaching, and research requiring geospatial expertise and tools</li>
+                                <li>Lead the planning, design, and execution of research projects</li>
+                                <li>Develop methodologies and frameworks for data collection and analysis</li>
+                                <li>Gather, interpret, and analyze complex data from various sources</li>
+                                <li>Use geospatial and statistical tools to derive meaningful insights and trends</li>
+                                <li>Develop maps and other visualizations based on data analysis</li>
+                                <li>Produce comprehensive reports and presentations outlining projects and outcomes</li>
+                                <li>Collaborate with cross-functional teams, providing expertise in research methodologies</li>
+                                <li>Design, develop, and manage data resources that facilitate data analysis and retrieval</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Rice University - Previous -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold">Rice University, Houston, TX</h3>
+                                <span class="text-blue-600 font-medium mt-1 sm:mt-0">Nov 2018 - Jan 2025</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-gray-800 mb-3">GIS Specialist</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                                <li>Co-developed and supported innovative web-based map applications and cloud infrastructure</li>
+                                <li>Led the development of ESRI applications for Bayou City Waterkeepers and McNair Center</li>
+                                <li>Orchestrated systems architecture and integration including ArcGIS Enterprise platform</li>
+                                <li>Supervised Fondren Fellows in projects mapping archival images from historical plantations</li>
+                                <li>Co-developed COVID-19 response platform using ArcGIS Dashboards, recognized internationally</li>
+                                <li>Pioneered disaster response web application for Beirut used by Lebanese army and NGOs</li>
+                                <li>Enhanced data processing efficiency by implementing ETL pipelines and QA/QC systems</li>
+                                <li>Managed full process of data cleaning, analysis, and visualization of datasets</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Environmental/Data Engineer -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold">Rice University, Houston, TX</h3>
+                                <span class="text-blue-600 font-medium mt-1 sm:mt-0">Jan 2016 - Nov 2018</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-gray-800 mb-3">Environmental/Data Engineer</h4>
+                            <p class="text-gray-600">Conducted extensive spatial analysis, spatial statistics, data manipulation, and remote sensing using ArcGIS Pro, ArcMap, and ENVI.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ministry of the Environment -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold">Ministry of the Environment, Brasília, Brazil</h3>
+                                <span class="text-blue-600 font-medium mt-1 sm:mt-0">Jun 2017 - Jun 2018</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-gray-800 mb-3">Intern</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                                <li>Provided technical support in analysis and evaluation of georeferenced products</li>
+                                <li>Assisted in geoprocessing and production of environmental datasets using ArcMap and QGIS</li>
+                                <li>Managed discussion workshops with stakeholders on socio-economic and environmental planning</li>
+                                <li>Analyzed and created technical reports on environmental impact and remote sensing</li>
+                                <li>Compiled data on economic-ecological zoning to support departmental reports</li>
+                                <li>Organized geographic databases (GDB) and assisted in remote sensing activities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Education -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-semibold mb-4">Education</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-medium">Bachelor of Science (B.Sc.) in Environmental Engineering</h4>
+                                    <p class="text-gray-600">University of Brasilia, Brasilia, Brazil (Graduated 2018)</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Brazil Scientific Mobility Program</h4>
+                                    <p class="text-gray-600">Saint Francis University, Pennsylvania, USA (2015–2016)</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-xl font-semibold mt-8 mb-4">Certifications & Specializations</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="font-medium">Specialization in Geographic Information Systems (GIS)</h4>
+                                    <p class="text-gray-600">University of California, Davis (via Coursera) - Sep 2024</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Specialization in Introduction to Generative AI</h4>
+                                    <p class="text-gray-600">Google Cloud (via Coursera) - Sep 2024</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Google Cloud Digital Leader Professional Certificate</h4>
+                                    <p class="text-gray-600">Google Cloud (via Coursera) - Sep 2024</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">CitiesX: The Past, Present and Future of Urban Life</h4>
+                                    <p class="text-gray-600">HarvardX (via edX) - Aug 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-virus text-blue-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium mr-2">GIS</span>
+                            <span class="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">Public Health</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">SARS-CoV-2 Wastewater Monitoring</h3>
+                        <p class="text-gray-600 mb-4">Online dashboard that tracks and predicts SARS-CoV-2 viral loads based on regular sampling of wastewater in Houston.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-link mr-2"></i>
+                            <a href="https://covidwwtp.spatialstudieslab.org/" target="_blank" class="text-blue-600 hover:underline">covidwwtp.spatialstudieslab.org</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-mountain text-green-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium mr-2">GIS</span>
+                            <span class="inline-block bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-full font-medium">Climate</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Global Glacier Casualty List</h3>
+                        <p class="text-gray-600 mb-4">Dynamic platform visualizing data about recently disappeared and soon-to-disappear glaciers, featured at UNESCO.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-link mr-2"></i>
+                            <a href="https://glaciercasualtylist.rice.edu/" target="_blank" class="text-blue-600 hover:underline">glaciercasualtylist.rice.edu</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fas fa-city text-purple-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium mr-2">GIS</span>
+                            <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full font-medium">Urban</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">imagineRio</h3>
+                        <p class="text-gray-600 mb-4">Digital platform revealing centuries of Rio de Janeiro's urban evolution, presented at La Biennale di Venezia.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-link mr-2"></i>
+                            <a href="https://imaginerio.org/" target="_blank" class="text-blue-600 hover:underline">imaginerio.org</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-red-100 flex items-center justify-center">
+                        <i class="fas fa-explosion text-red-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium mr-2">GIS</span>
+                            <span class="inline-block bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full font-medium">Disaster</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Beirut Recovery Map</h3>
+                        <p class="text-gray-600 mb-4">GIS application used by the Lebanese army and NGOs for Beirut's recovery post-2020 explosion.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-link mr-2"></i>
+                            <a href="https://beirutrecovery.org/" target="_blank" class="text-blue-600 hover:underline">beirutrecovery.org</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-teal-100 flex items-center justify-center">
+                        <i class="fas fa-water text-teal-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium mr-2">GIS</span>
+                            <span class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full font-medium">Environment</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Justice in the Sewers</h3>
+                        <p class="text-gray-600 mb-4">Mapping Houston's sewage overflows to highlight environmental justice issues.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-link mr-2"></i>
+                            <a href="https://bayoucitywaterkeeper.org/justice-in-the-sewers-map/" target="_blank" class="text-blue-600 hover:underline">bayoucitywaterkeeper.org</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-yellow-100 flex items-center justify-center">
+                        <i class="fas fa-archway text-yellow-600 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium mr-2">GIS</span>
+                            <span class="inline-block bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full font-medium">History</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">levantCarta</h3>
+                        <p class="text-gray-600 mb-4">Digital archive of historical maps and documents from the Middle East.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-link mr-2"></i>
+                            <a href="https://spatialstudieslab.rice.edu/levantcarta/" target="_blank" class="text-blue-600 hover:underline">spatialstudieslab.rice.edu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition">
+                    <i class="fas fa-folder-open mr-2"></i>
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Publications & Press</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Academic Publications -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-book-open text-blue-600 mr-3"></i>
+                        Academic Publications
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="publication-card bg-white p-6 rounded-lg shadow-sm">
+                            <h4 class="font-medium text-lg mb-2">The location of pain in cluster headache</h4>
+                            <p class="text-gray-600 text-sm mb-3">Schor LI, Pearson SM, de Castro Sousa B, et al. Headache. 2024; 64: 783-795. doi:10.1111/head.14766</p>
+                            <a href="https://doi.org/10.1111/head.14766" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center">
+                                <i class="fas fa-external-link-alt mr-1"></i> View Publication
+                            </a>
+                        </div>
+                        
+                        <div class="publication-card bg-white p-6 rounded-lg shadow-sm">
+                            <h4 class="font-medium text-lg mb-2">Avaliação das sobreposições geométricas de imóveis e reservas legais do Cadastro Ambiental Rural (CAR) na RIDE-DF</h4>
+                            <p class="text-gray-600 text-sm mb-3">Franco, Uilvim Ettore Gardin. Thesis (Bacharelado em Engenharia Ambiental)—University of Brasilia, Brasilia, 2018.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Press Highlights -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-newspaper text-blue-600 mr-3"></i>
+                        Press Highlights
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="publication-card bg-white p-6 rounded-lg shadow-sm">
+                            <h4 class="font-medium text-lg mb-2">Celebrations of the 1st World Day for Glaciers and World Water Day in Paris</h4>
+                            <p class="text-gray-600 text-sm mb-3">Un-glaciers.org. (2025).</p>
+                            <a href="https://www.un-glaciers.org/en/world-day-glaciers-paris" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center">
+                                <i class="fas fa-external-link-alt mr-1"></i> Read Article
+                            </a>
+                        </div>
+                        
+                        <div class="publication-card bg-white p-6 rounded-lg shadow-sm">
+                            <h4 class="font-medium text-lg mb-2">As Iceland prepares to lose its ice, it introduces first graveyard of glaciers</h4>
+                            <p class="text-gray-600 text-sm mb-3">United Nations Western Europe. (2024).</p>
+                            <a href="https://unric.org/en/as-iceland-prepares-to-lose-its-ice-it-introduces-the-first-graveyard-of-glaciers/" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center">
+                                <i class="fas fa-external-link-alt mr-1"></i> Read Article
+                            </a>
+                        </div>
+                        
+                        <div class="publication-card bg-white p-6 rounded-lg shadow-sm">
+                            <h4 class="font-medium text-lg mb-2">imagineRio Digital Platform Reveals Centuries of Rio de Janeiro's Urban Evolution</h4>
+                            <p class="text-gray-600 text-sm mb-3">Getty.edu. (2024).</p>
+                            <a href="https://www.getty.edu/news/imaginerio-digital-platform-reveals-centuries-of-rio-de-janeiro-urban-evolution/" target="_blank" class="text-blue-600 text-sm hover:underline flex items-center">
+                                <i class="fas fa-external-link-alt mr-1"></i> Read Article
+                            </a>
+                        </div>
+                        
+                        <div class="publication-card bg-white p-6 rounded-lg shadow-sm">
+                            <h4 class="font-medium text-lg mb-2">Rice researchers create interactive map of COVID cases in Texas</h4>
+                            <p class="text-gray-600 text-sm mb-3">Rice News, March 31, 2020.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 bg-blue-600 text-white p-10">
+                            <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="bg-blue-500 p-3 rounded-full mr-4 flex-shrink-0">
+                                        <i class="fas fa-envelope text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-1">Email</h4>
+                                        <p class="text-blue-100">uilvim@rice.edu</p>
+                                        <p class="text-blue-100">uilvim@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-blue-500 p-3 rounded-full mr-4 flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-1">Location</h4>
+                                        <p class="text-blue-100">Rice University, Houston, TX</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-blue-500 p-3 rounded-full mr-4 flex-shrink-0">
+                                        <i class="fas fa-building text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-1">Center for Research Computing</h4>
+                                        <p class="text-blue-100">Office of Information Technology</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-10">
+                                <h4 class="font-medium mb-4">Connect With Me</h4>
+                                <div class="flex space-x-6">
+                                    <a href="https://www.linkedin.com/in/uilvimettore/" target="_blank" class="bg-blue-500 hover:bg-blue-400 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                        <i class="fab fa-linkedin-in text-lg"></i>
+                                    </a>
+                                    
+                                    <a href="https://github.com/Uilvim" target="_blank" class="bg-blue-500 hover:bg-blue-400 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://profiles.rice.edu/staff/uilvim-eg-franco" target="_blank" class="bg-blue-500 hover:bg-blue-400 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                        <i class="fas fa-globe"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-10">
+                            <h3 class="text-2xl font-semibold mb-6">Send Me a Message</h3>
+                            <form>
+                                <div class="mb-4">
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                    <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                    <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-xl font-bold text-blue-400">Uilvim Ettore Gardin Franco</span>
+                    <p class="text-gray-400 mt-2">Geospatial Analytics & Data Visualization Specialist</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/uilvimettore/" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in text-lg"></i>
+                    </a>
+                    
+                    <a href="https://github.com/Uilvim" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-github text-lg"></i>
+                    </a>
+                    <a href="https://profiles.rice.edu/staff/uilvim-eg-franco" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fas fa-globe text-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Uilvim E. G. Franco. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
